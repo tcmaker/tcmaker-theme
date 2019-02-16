@@ -47,7 +47,8 @@ sed -i 's/Listen 80/Listen 4000/g' /etc/apache2/ports.conf
 a2enmod rewrite
 cat <<EOF >> /etc/apache2/sites-available/000-default.conf
 <Directory "$APACHE_WEB_ROOT">
-  AllowOverride All
+	Options FollowSymLinks
+	AllowOverride All
 </Directory>
 EOF
 
