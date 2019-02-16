@@ -82,4 +82,6 @@ curl "http://localhost:4000/wp-admin/install.php?step=2" \
 --data-urlencode "admin_password2=$WP_ADMIN_PASSWORD" \
 --data-urlencode "pw_weak=1"
 
+ln -s /vagrant/wordpress-theme $APACHE_WEB_ROOT/wp-content/themes/tcmaker-theme
+
 touch /root/.already_provisioned
