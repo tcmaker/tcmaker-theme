@@ -24,10 +24,10 @@ WP_ADMIN_EMAIL=admin@example.com
 
 # APT REPOS
 sudo apt-get update
-sudo apt-get -y install software-properties-common
-sudo add-apt-repository -y ppa:ondrej/php
-sudo add-apt-repository -y ppa:ondrej/apache2
-sudo apt-get update
+#sudo apt-get -y install software-properties-common
+#sudo add-apt-repository -y ppa:ondrej/php
+#sudo add-apt-repository -y ppa:ondrej/apache2
+#sudo apt-get update
 
 # MySQL
 echo "mysql-server-5.7 mysql-server/root_password password $MYSQL_ROOT_PASSWORD" | sudo debconf-set-selections
@@ -53,10 +53,10 @@ cat <<EOF >> /etc/apache2/sites-available/000-default.conf
 EOF
 
 # PHP
-apt-get -y install php7.3-{common,mbstring,xmlrpc,soap,gd,xml,intl,mysql,cli,zip,curl}
-apt-get -y install libapache2-mod-php7.3
+apt-get -y install php-{common,mbstring,xmlrpc,soap,gd,xml,intl,mysql,cli,zip,curl}
+apt-get -y install libapache2-mod-php
 
-service apache2 restart
+systemctl restart apache2
 
 # WORDPRESS
 
@@ -75,7 +75,7 @@ echo "define('FS_METHOD', 'direct');" >> wp-config.php
 chown -R vagrant:vagrant $APACHE_WEB_ROOT
 
 curl "http://localhost:4000/wp-admin/install.php?step=2" \
---data-urlencode "weblog_title='Twin Cities Maker'" \
+--data-urlencode "weblog_title=Twin Cities Maker" \
 --data-urlencode "user_name=$WP_ADMIN_USERNAME" \
 --data-urlencode "admin_email=$WP_ADMIN_EMAIL" \
 --data-urlencode "admin_password=$WP_ADMIN_PASSWORD" \
@@ -83,5 +83,11 @@ curl "http://localhost:4000/wp-admin/install.php?step=2" \
 --data-urlencode "pw_weak=1"
 
 ln -s /vagrant/wordpress-theme $APACHE_WEB_ROOT/wp-content/themes/tcmaker-theme
+
+# NODEJS + GULP
+apt-get -y install nodejs npm
+# npm set ca null
+npm install gulp-cli -g
+npm install gulp -g
 
 touch /root/.already_provisioned

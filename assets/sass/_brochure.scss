@@ -1,0 +1,39 @@
+// Styles for the Brochure section of the site.
+
+.jumbotron-main {
+  background-image: url("../img/lathe-control.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: $gray-200;
+  font-family: "League Spartan";
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+
+  h1 {
+    color: $gray-200;
+    font-size: 2.75em;
+  }
+}
+
+.brochure-hero-image {
+  max-width: 100%;
+}
+
+.brochure-heading {
+  background-size: cover;
+  padding: 1.5em 1em;
+  font-size: 2.75em;
+  color: $gray-200;
+  margin-bottom: 1rem;
+}
+
+.left-nav {
+  .nav-item {
+    font-family: "League Spartan";
+    font-size: 0.8em;
+  }
+
+  a.nav-link.active {
+    color: #000;
+  }
+}

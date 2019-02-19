@@ -1,0 +1,101 @@
+h1,h2,h3,h4,h5,h6 {
+  // font-variant: small-caps;
+  text-transform: uppercase;
+}
+
+.btn {
+  font-family: $font-family-sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.navbar-brand {
+  img {
+    height: 2rem;
+    margin-right: 1em;
+  }
+}
+
+.navbar {
+  font-family: "League Spartan";
+  font-size: 0.8rem;
+}
+
+//// Blog styles ////
+
+.byline {
+  font-family: $font-family-sans-serif;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.blog-preview {
+  h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 0;
+    a {
+      color: $body-color;
+      &:hover {
+        color: $brand-red;
+      }
+    }
+  }
+
+  .blog-preview-image {
+    max-width: 200px;
+  }
+}
+
+.blog-post {
+  .byline {
+    font-family: $font-family-sans-serif;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+}
+
+.page-heading {
+  margin-bottom: 1rem;
+}
+
+// Flexbox Sticky Footer
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-container {
+  flex-shrink: 0;
+}
+
+.main-container {
+  flex: 1 0 auto;
+}
+
+.jumbotron {
+  font-family: $font-family-sans-serif;
+}
+
+.card-img-right {
+  height: 100%;
+  border-radius: 0 3px 3px 0;
+}
+
+.footer {
+  font-family: $font-family-sans-serif;
+  font-size: 0.9em;
+  padding: 1.5em 0;
+  flex-shrink: 0;
+  background-color: $gray-800;
+  margin-top: 1.5em;
+  color: $gray-500;
+
+  h1,h2,h3,h4,h5,h6 {
+    color: $gray-200;
+    font-variant: small-caps;
+  }
+}
