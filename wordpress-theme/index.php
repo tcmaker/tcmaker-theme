@@ -1,5 +1,5 @@
 <?php get_header(); ?>
 
-butts
+index
 
 <?php get_footer(); ?>
