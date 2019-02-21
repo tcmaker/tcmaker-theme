@@ -55,57 +55,28 @@
       <h2>From the Blog</h2>
     </div>
   </div>
-  <div class="row">
     <div class="row">
-      <!-- begin blog post -->
-      <div class="col-lg-6">
-        <div class="card flex-md-row blog-preview">
-          <div class="card-body d-flex align-items-start">
-            <div class="card-text">
-              <h3><a href="/blog/post">Grilling! With food! Wednesday night!</a></h3>
-              <p class="byline">
-                by Bob Poate, October 8th, 2018
-              </p>
-              <p>They said it couldn’t be done. They said we were foolish to try. But
-                Grillchefmeister Michael is planning on doing what doubters said
-                couldn’t, nay, shouldn’t be done! Grill outside in the lovely fall
-                weather we’re currently experiencing. So come early, come often to the
-                Open House Wednesday night, and experience the Thrill of the Grill when
-                you can actually use some nice hot food.</p>
+      <?php query_posts('posts_per_page=2'); ?>
+      <?php while ( have_posts() ) : the_post(); ?>
+        <!-- begin blog post -->
+        <div class="col-lg-6">
+          <div class="card flex-md-row blog-preview">
+            <div class="card-body d-flex align-items-start">
+              <div class="card-text">
+                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                <p class="byline">
+                  by <?php the_author(); ?>, <?php the_date(); ?>
+                </p>
+                <?php the_excerpt(); ?>
 
-                <a href="/blog/post">Continue reading</a>
+                  <a class="btn btn-primary" href="<?php the_permalink(); ?>">Continue reading</a>
+              </div>
             </div>
-          </div>
-          <%= image_tag('chef-pot.png', class: 'card-img-right flex-none') -%>
-        </div>
-      </div>
-      <!-- end -->
-
-      <!-- begin blog post -->
-      <div class="col-lg-6">
-        <div class="card flex-md-row blog-preview">
-          <div class="card-body flex-column">
-            <div class="card-text">
-              <h3><a href="/blog/post">Big Laser is Ready for Use</a></h3>
-              <p class="byline">
-                by Samuel L. Jackson, October 4th, 2018
-              </p>
-              <p>You think water moves fast? You should see ice. It moves like it
-                has a mind. Like it knows it killed the world once and got a taste
-                for murder. After the avalanche, it took us a week to climb out.
-                Now, I don't know exactly when we turned on each other, but I
-                know that seven of us survived the slide... and only five made it
-                out. Now we took an oath, that I'm breaking now. We said we'd say
-                it was the snow that killed the other two, but it wasn't. Nature
-                is lethal but it doesn't hold a candle to man.</p>
-
-                <a href="/blog/post">Continue reading</a>
-            </div>
-            <!-- <%= image_tag('chef-pot.png', class: 'card-img-right flex-auto') -%> -->
+            <!-- the_post_thumbnail() -->
           </div>
         </div>
-      </div>
-      <!-- end -->
+        <!-- end -->
+      <?php endwhile; ?>
     </div>
   </div>
 </div>

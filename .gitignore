@@ -1,5 +1,10 @@
 .vagrant
 
+*-cloudimg-console.log
+
+wordpress-theme/assets
+!/wordpress-theme/assets/.keep
+
 /node_modules/*
 !/node_modules/.keep
 

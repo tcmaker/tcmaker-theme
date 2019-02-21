@@ -26,6 +26,8 @@ gulp.task('process-fonts', function() {
     .pipe(gulp.dest('wordpress-theme/assets/fonts'));
 });
 
+gulp.task('build', gulp.parallel('compile-sass', 'process-images', 'process-fonts'));
+
 gulp.task('watch', function() {
   gulp.watch('assets/sass/**/*', gulp.series('compile-sass'));
   gulp.watch('assets/img/**/*', gulp.series('process-images'));
