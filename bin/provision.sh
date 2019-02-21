@@ -70,6 +70,7 @@ mv wp-config-sample.php wp-config.php
 sed -i s/database_name_here/$MYSQL_WP_DATABASE/ wp-config.php
 sed -i s/username_here/$MYSQL_WP_USER/ wp-config.php
 sed -i s/password_here/$MYSQL_WP_PASSWORD/ wp-config.php
+sed -i "s/'WP_DEBUG', false/'WP_DEBUG', true/" wp-config.php
 echo "define('FS_METHOD', 'direct');" >> wp-config.php
 
 chown -R vagrant:vagrant $APACHE_WEB_ROOT

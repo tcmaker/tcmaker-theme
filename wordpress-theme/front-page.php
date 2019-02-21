@@ -65,7 +65,7 @@
               <div class="card-text">
                 <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                 <p class="byline">
-                  by <?php the_author(); ?>, <?php the_date(); ?>
+                  by <?php the_author(); ?>, <?php the_time('F j, Y'); ?>
                 </p>
                 <?php the_excerpt(); ?>
 
