@@ -14,6 +14,6 @@
         <?php endwhile; ?>
       <?php endif; ?>
     </div> <!-- col -->
-</div> <!-- row -->
-
+  </div> <!-- row -->
+</div>
 <?php get_footer(); ?>
