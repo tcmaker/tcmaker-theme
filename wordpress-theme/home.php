@@ -25,9 +25,10 @@
         <?php endwhile; ?>
       <?php endif; ?>
     </div> <!-- col -->
+<<<<<<< HEAD
     <div class="col-md-3 offset-md-1">
       sidebar
     </div>
-</div> <!-- row -->
-
+  </div> <!-- row -->
+</div> <!-- container -->
 <?php get_footer(); ?>
