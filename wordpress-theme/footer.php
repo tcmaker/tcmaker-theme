@@ -14,7 +14,6 @@
 
         <h6>Contact Information</h6>
         <p>lol</p>
-
       </div>
 
       <div class="col-md-3">
@@ -30,7 +29,7 @@
 
       <div class="col-md-3">
         <p><img src="<?php echo image_uri('logo-white-text.svg'); ?>"></p>
-        <p>Copyright &copy; 2009&ndash;2018 Twin Cities Maker. <a
+        <p>Copyright &copy; 2009&ndash;<?php echo date('Y'); ?> Twin Cities Maker. <a
           href="https://creativecommons.org/licenses/by-nc-sa/3.0/us/">Some
           rights reserved.</a></p>
         <ul class="list-unstyled">

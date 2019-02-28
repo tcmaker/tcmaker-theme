@@ -1,11 +1,30 @@
 <?php
 
+add_action( 'init', function() {
+  // register_taxonomy_for_object_type('brochure_category', 'page', array(
+  //   'show_ui' => true,
+  // ));
+
+  register_taxonomy('brochure_category', 'page', array(
+    'label' => 'Brochure Category',
+    'hierarchical' => true,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'meta_box_cb' => 'post_categories_meta_box',
+  ));
+
+});
+
+//brochure_sections_taxonomy();
+
+
 function image_uri($img) {
   return get_template_directory_uri() . '/assets/img/' . $img;
 }
 
 
 function the_breadcrumbs() {
+  global $post;
   $breadcrumbs = array();
 
   // Don't show breadcrumbs on front page, even if this function is called.
@@ -13,19 +32,44 @@ function the_breadcrumbs() {
     return;
   }
 
-  // We'll always have at least one breadcrumb:
-  array_push($breadcrumbs, array(
-    'uri' => '/',
-    'title' => 'Home',
-  ));
-
   if (is_home()) {
     array_push($breadcrumbs, array(
       'uri' => '/blog',
       'title' => 'Blog',
     ));
+    return render_breadcrumbs($breadcrumbs);
   }
 
+  if (is_page()) {
+    array_push($breadcrumbs, array(
+      'uri' => get_the_permalink(),
+      'title' => get_the_title(),
+    ));
+
+    $page = $post;
+    while ($page->post_parent) {
+      $page = get_page($page->post_parent);
+
+      array_unshift($breadcrumbs, array(
+        'uri' => get_permalink($page->ID),
+        'title' => get_the_title($page->ID),
+      ));
+    }
+    return render_breadcrumbs($breadcrumbs);
+  }
+}
+
+function render_breadcrumbs($breadcrumbs) {
+  // We'll always have at least one breadcrumb:
+  array_unshift($breadcrumbs, array(
+    'uri' => '/',
+    'title' => 'Home',
+  ));
+
+  // The last breadcrumb item is special.
+  $activeBreadcrumb = array_pop($breadcrumbs);
+
+  // Loop over breadcrumb array, displaying breadcrumbs
   echo '<nav aria-label="breadcrumb">';
   echo '<ol class="breadcrumb">';
   // Display inactive breadcrumbs
@@ -34,10 +78,9 @@ function the_breadcrumbs() {
     echo '<a href="' . $breadcrumb['uri'] . '">' . $breadcrumb['title'] . '</a>';
     echo "</li>";
   }
-  // <li class="breadcrumb-item active" aria-current="page"><%= active_breadcrumb.title %></li>
+  echo '<li class="breadcrumb-item active" aria-current="page">' . $activeBreadcrumb['title'] . '</li>';
   echo '</ol>';
   echo '</nav>';
-
 }
 
 function the_broken_breadcrumbs()
