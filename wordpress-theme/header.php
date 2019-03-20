@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/screen.css">
 
-  <title>Twin Cities Maker</title>
+  <title><?php echo title_for_title_tag(); ?></title>
 </head>
 <body>
   <div class="container nav-container">
@@ -31,7 +31,7 @@
           <li class="nav-item"><a class="nav-link" href="#">Classes</a></li>
           <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="/events">Calendar</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Wiki</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://wiki.tcmaker.org/">Wiki</a></li>
 
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -70,12 +70,4 @@
         <% end %> -->
       </div>
     </nav>
-
-
-
-
-
-
-
-
   </div>

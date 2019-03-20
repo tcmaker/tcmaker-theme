@@ -5,7 +5,10 @@
 
 <h1 class="brochure-heading" style="background-image: url(<?php echo image_uri('chisels-in-row.jpg'); ?>);">Blog</h1>
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-3">
+      sidebar
+    </div> <!-- col -->
+    <div class="col-md-9">
       <?php if ( have_posts() ) : ?>
         <?php while ( have_posts() ) : ?>
           <?php the_post(); ?>
@@ -21,14 +24,9 @@
               </p>
             </div>
           </div>
-
         <?php endwhile; ?>
       <?php endif; ?>
     </div> <!-- col -->
-<<<<<<< HEAD
-    <div class="col-md-3 offset-md-1">
-      sidebar
-    </div>
   </div> <!-- row -->
 </div> <!-- container -->
 <?php get_footer(); ?>

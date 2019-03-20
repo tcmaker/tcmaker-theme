@@ -55,3 +55,6 @@
         <?php endwhile; ?>
       <?php endif; ?>
     </div>
+  </div> <!-- row -->
+</div> <!-- container -->
+<?php get_footer(); ?>

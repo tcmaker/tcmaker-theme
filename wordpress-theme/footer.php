@@ -29,9 +29,7 @@
 
       <div class="col-md-3">
         <p><img src="<?php echo image_uri('logo-white-text.svg'); ?>"></p>
-        <p>Copyright &copy; 2009&ndash;<?php echo date('Y'); ?> Twin Cities Maker. <a
-          href="https://creativecommons.org/licenses/by-nc-sa/3.0/us/">Some
-          rights reserved.</a></p>
+        <p>Copyright &copy; 2009&ndash;<?php echo date('Y'); ?> Twin Cities Maker.</p>
         <ul class="list-unstyled">
           <li><a href="">Policies and Rules</a></li>
           <li><a href="">501(c)(3) Tax Information</a></li>

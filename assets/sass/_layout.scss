@@ -3,6 +3,14 @@ h1,h2,h3,h4,h5,h6 {
   text-transform: uppercase;
 }
 
+.breadcrumb-item a {
+  color: theme-color("primary");
+}
+
+a.nav-link {
+  color: theme-color("primary");
+}
+
 .btn {
   font-family: $font-family-sans-serif;
   font-weight: bold;
