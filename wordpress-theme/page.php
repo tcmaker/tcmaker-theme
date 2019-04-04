@@ -32,7 +32,7 @@
   <div class="row">
     <div class="col-md-3 left-nav">
       <ul class="nav flex-column">
-        <?php foreach($menuItems as $item): ?>
+        <?php foreach ($menuItems as $item): ?>
           <?php if ($post->ID == $item->ID): ?>
             <li class="nav-item">
               <a class="nav-link active" href="<?php echo get_permalink($item); ?>"><?php echo apply_filters('the_title', $item->post_title); ?></a>

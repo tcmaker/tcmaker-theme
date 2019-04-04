@@ -1,6 +1,6 @@
 <?php
 
-add_action( 'init', function() {
+add_action('init', function() {
   register_taxonomy('brochure_category', 'page', array(
     'label' => 'Brochure Category',
     'hierarchical' => true,
@@ -9,6 +9,8 @@ add_action( 'init', function() {
     'meta_box_cb' => 'post_categories_meta_box',
   ));
 });
+
+register_nav_menu('top-nav', 'Top Nav');
 
 function title_for_title_tag() {
   if (is_front_page()) {
@@ -20,6 +22,23 @@ function title_for_title_tag() {
 
 function image_uri($img) {
   return get_template_directory_uri() . '/assets/img/' . $img;
+}
+
+function title_or_brochure_catagory($page) {
+  if ($page->post_parent) {
+    return get_the_title($page->ID);
+  }
+
+  // Show the brochure catagory instead
+  $categories = wp_get_post_terms($post->ID, 'brochure_category');
+  if ($categories) {
+    $brochure_catagory = array_shift($catagories);
+    return $brochure_catagory->name;
+  }
+
+  // It's not in a brochure catagory, so just return the title
+  return get_the_title($page->ID);
+
 }
 
 function the_breadcrumbs() {
@@ -92,7 +111,7 @@ function render_breadcrumbs($breadcrumbs) {
   echo '<nav aria-label="breadcrumb">';
   echo '<ol class="breadcrumb">';
   // Display inactive breadcrumbs
-  foreach($breadcrumbs as $breadcrumb) {
+  foreach ($breadcrumbs as $breadcrumb) {
     echo '<li class="breadcrumb-item">';
     echo '<a href="' . $breadcrumb['uri'] . '">' . $breadcrumb['title'] . '</a>';
     echo "</li>";

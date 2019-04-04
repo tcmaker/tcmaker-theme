@@ -9,6 +9,10 @@
 
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/screen.css">
 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
   <title><?php echo title_for_title_tag(); ?></title>
 </head>
 <body>
@@ -26,12 +30,42 @@
           <!-- <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li> -->
-          <li class="nav-item"><a class="nav-link" href="/about-us">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="/membership">Membership</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Classes</a></li>
-          <li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="/events">Calendar</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://wiki.tcmaker.org/">Wiki</a></li>
+
+          <?php
+            // What's the current page?
+            global $post;
+            $current_page_id = $post->ID;
+
+            $menu_items = array();
+
+            $pages = wp_get_nav_menu_items('top-nav');
+            foreach ($pages as $page) {
+              $title = $page->title;
+              $brochure_category = wp_get_post_terms($page->object_id, 'brochure_category');
+
+              if ($brochure_category) {
+                $title = array_shift($brochure_category)->name;
+              }
+
+              array_push($menu_items, array(
+                'title'  => $title,
+                'uri' => $page->url,
+                'active' => $current_page_id == $page->object_id,
+              ));
+            }
+          ?>
+
+          <?php foreach ($menu_items as $item): ?>
+            <?php if ($item['active']): ?>
+                <li class="nav-item active">
+                  <a class="nav-link"  href="<?php echo $item['uri']; ?>"><?php echo $item['title']; ?></a>
+                </li>
+            <?php else: ?>
+              <li class="nav-item">
+                <a class="nav-link" href="<?php echo $item['uri']; ?>"><?php echo $item['title']; ?></a>
+              </li>
+            <?php endif; ?>
+          <?php endforeach; ?>
 
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
