@@ -10,18 +10,18 @@ class ParameterExtractor
   public function __construct($params)
   {
     if (array_key_exists('year', $params)) {
-      $this->year = $params['year'];
+      $this->year = $params['cal-year'];
     }
 
     if (array_key_exists('month', $params)) {
-      $this->month = $params['month'];
+      $this->month = $params['cal-month'];
     }
 
-    if (array_key_exists('day', $params)) {
-      $this->year = $params['day'];
+    if (array_key_exists('cal-day', $params)) {
+      $this->year = $params['d'];
     }
 
-    if (array_key_exists('date', $params)) {
+    if (array_key_exists('cal-date', $params)) {
       $parts = explode('-', $params['date']);
 
       if (count($parts) == 3) {
