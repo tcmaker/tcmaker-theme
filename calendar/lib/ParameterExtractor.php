@@ -9,11 +9,11 @@ class ParameterExtractor
   public $day = 1;
   public function __construct($params)
   {
-    if (array_key_exists('year', $params)) {
+    if (array_key_exists('cal-year', $params)) {
       $this->year = $params['cal-year'];
     }
-
-    if (array_key_exists('month', $params)) {
+    
+    if (array_key_exists('cal-month', $params)) {
       $this->month = $params['cal-month'];
     }
 
@@ -44,5 +44,6 @@ class ParameterExtractor
     if (! is_numeric($this->day)) {
       $this->day = $date['mday'];
     }
+
   }
 }
