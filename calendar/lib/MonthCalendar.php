@@ -17,7 +17,7 @@ class MonthCalendar
     $this->year = $year;
 
     $beginningOfMonth = getdate(strtotime("$year-$month-1 00:00:00"));;
-    $endOfMonth = getdate(strtotime('last day of 2019-4'));
+    $endOfMonth = getdate(strtotime("last day of {$this->year}-{$this->month}"));
 
     // Since Sunday has a numerical code of 0 and our calendar begins on Sunday,
     // $dayOfMonth is also, conveniently, the number of extra days to add
@@ -60,6 +60,35 @@ class MonthCalendar
     $this->events = $service->events->listEvents($calendarId, $optParams);
   }
 
+  public function getNextMonthCalendarUrl()
+  {
+    global $wp;
+
+    $y = $this->year;
+    $m = $this->month + 1;
+
+    if ($m > 12) {
+      $y++;
+      $m = 1;
+    }
+
+    return $wp->request . "?cal-year={$y}&cal-month={$m}";
+  }
+
+  public function getPreviousMonthCalendarUrl()
+  {
+    global $wp;
+
+    $y = $this->year;
+    $m = $this->month - 1;
+
+    if ($m < 1) {
+      $y--;
+      $m = 12;
+    }
+    return $wp->request . "?cal-year={$y}&cal-month={$m}";
+  }
+
   public function getEventsByDay()
   {
     $days = array();
@@ -76,7 +105,11 @@ class MonthCalendar
     foreach ($this->events as $event) {
       $key = new \DateTime($event->getStart()->getDateTime());
       $key = $key->format('Y-m-d');
-      $days[$key]->addEvent($event);
+
+      // TODO: Handle all-day events instead of just ignoring them.
+      if (array_key_exists($key, $days)) {
+        $days[$key]->addEvent($event);
+      }
     }
 
     return $days;
