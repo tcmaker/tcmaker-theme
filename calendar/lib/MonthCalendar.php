@@ -45,12 +45,8 @@ class MonthCalendar
     $client = new \Google_Client();
     $client->setApplicationName('Twin Cities Maker Calendar');
     $client->setScopes(\Google_Service_Calendar::CALENDAR_READONLY);
-    // This key is configurable, but it isn't secret, so we can hardcode a
-    // default value.
+
     $developerKey = get_option('google_calendar_key');
-    if (! $developerKey) {
-      $developerKey = 'AIzaSyBvVx_iyaiEZ4xOOFzIovGe9j76KNgFUbE';
-    }
     $client->setDeveloperKey($developerKey);
     $service = new \Google_Service_Calendar($client);
 
