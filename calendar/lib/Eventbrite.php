@@ -42,5 +42,3 @@ class Eventbrite
     ));
   }
 }
-
-// 6ZH7YETAG4EEJEWXOHXJ
