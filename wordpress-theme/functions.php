@@ -12,6 +12,32 @@ add_action('init', function() {
 
 register_nav_menu('top-nav', 'Top Nav');
 
+function trigger_page_not_found() {
+
+    // 1. Ensure `is_*` functions work
+    global $wp_query;
+    $wp_query->set_404();
+
+    // 2. Fix HTML title
+    add_action( 'wp_title', function () {
+        return '404: Not Found';
+    }, 9999 );
+
+    // 3. Throw 404
+    status_header( 404 );
+    nocache_headers();
+
+    // 4. Show 404 template
+    require get_404_template();
+
+    // 5. Stop execution
+    exit;
+}
+
+
+
+
+
 function title_for_title_tag() {
   if (is_front_page()) {
     return 'Twin Cities Maker';

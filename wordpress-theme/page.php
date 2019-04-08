@@ -19,6 +19,11 @@
     'post_status' => 'publish'
   ));
 
+  usort($children, function($a, $b) {
+    if ($a == $b) { return 0; }
+    return ($a->menu_order < $b->menu_order) ? -1 : 1;
+  });
+
   $menuItems = $children;
   array_unshift($menuItems, $rootPage);
 ?>

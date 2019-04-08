@@ -32,9 +32,15 @@
           </li> -->
 
           <?php
-            // What's the current page?
+            // What's the current page? If there's a 404, there won't be a
+            // current page, but we still need to set current_page_id to
+            // something.
             global $post;
-            $current_page_id = $post->ID;
+            if ($post) {
+              $current_page_id = $post->ID;
+            } else {
+              $current_page_id = -1;
+            }
 
             $menu_items = array();
 

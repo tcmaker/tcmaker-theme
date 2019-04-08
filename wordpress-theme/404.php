@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+
+<?php var_dump($_SERVER); ?>
+
 <div class="container main-container">
   <h1 class="brochure-heading" style="background-image: url(<?php echo image_uri('drawers.jpg'); ?>);">Not Found</h1>
   <div class="row">
