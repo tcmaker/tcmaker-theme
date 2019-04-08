@@ -5,9 +5,9 @@ class Eventbrite
 {
   protected $personalOauthToken = null;
 
-  public function __construct($token)
+  public function __construct()
   {
-    $this->personalOauthToken = $token;
+    $this->personalOauthToken = get_option('eventbrite_token');
   }
 
   public function getUpcomingClasses()

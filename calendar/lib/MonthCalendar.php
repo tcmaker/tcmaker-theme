@@ -45,12 +45,17 @@ class MonthCalendar
     $client = new \Google_Client();
     $client->setApplicationName('Twin Cities Maker Calendar');
     $client->setScopes(\Google_Service_Calendar::CALENDAR_READONLY);
-    // $client->setDeveloperKey('AIzaSyDwWNFqfJrKNc2sWeeZuTiKDXIjbPgvZFg');
-    $client->setDeveloperKey('AIzaSyBvVx_iyaiEZ4xOOFzIovGe9j76KNgFUbE');
+    // This key is configurable, but it isn't secret, so we can hardcode a
+    // default value.
+    $developerKey = get_option('google_calendar_key');
+    if (! $developerKey) {
+      $developerKey = 'AIzaSyBvVx_iyaiEZ4xOOFzIovGe9j76KNgFUbE';
+    }
+    $client->setDeveloperKey($developerKey);
     $service = new \Google_Service_Calendar($client);
 
-    // $calendarId = 'tcmaker.org_2d3935333934333630383333@resource.calendar.google.com';
-    $calendarId = 'tcmaker.org_2kdduir4bmjmoblru05oq930ds@group.calendar.google.com';
+    // $laserCalendarId = 'tcmaker.org_2d3935333934333630383333@resource.calendar.google.com';
+    $calendarId = get_option('main_google_calendar_id');
     $optParams = array(
       'orderBy' => 'startTime',
       'singleEvents' => true,

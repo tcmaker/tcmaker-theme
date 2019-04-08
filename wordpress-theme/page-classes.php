@@ -4,7 +4,7 @@
   $categories = wp_get_post_terms($post->ID, 'brochure_category');
   $brochureCategory = array_shift($categories);
 
-  $client = new TCMaker\Calendar\Eventbrite('6ZH7YETAG4EEJEWXOHXJ');
+  $client = new TCMaker\Calendar\Eventbrite();
   $events = $client->getUpcomingClasses();
 ?>
 
@@ -14,16 +14,7 @@
   <h1 class="brochure-heading" style="background-image: url(<?php echo image_uri('chisels-in-row.jpg'); ?>);"><?php echo $brochureCategory->name; ?></h1>
 
   <div class="row">
-    <!-- <div class="col-md-3 left-nav">
-      <ul class="nav flex-column">
-      </ul>
-    </div> -->
-
-    <div class="col-md-12">
-      <h2>Upcoming Classes</h2>
-
-      <p>Our classes are open to members and non-members alike.</p>
-
+    <div class="col-md-3">
       <div class="card bg-light mb-3">
         <div class="card-body">
           <h5 class="card-title">Teach a Class</h5>
@@ -32,6 +23,12 @@
           get back to you to help get your class set up.</p>
         </div>
       </div>
+    </div> <!-- col -->
+
+    <div class="col-md-9">
+      <h2>Upcoming Classes</h2>
+
+      <p>Our classes are open to members and non-members alike.</p>
 
       <?php if ($events): ?>
         <?php $counter = 1; ?>

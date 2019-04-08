@@ -2,7 +2,7 @@
   $categories = wp_get_post_terms($post->ID, 'brochure_category');
   $brochureCategory = array_shift($categories);
 
-  $client = new TCMaker\Calendar\Eventbrite('6ZH7YETAG4EEJEWXOHXJ');
+  $client = new TCMaker\Calendar\Eventbrite();
   $event = $client->getEvent($_GET['event_id']);
 
   if ($event['response']['code'] > 299) {
@@ -21,10 +21,16 @@
   <h1 class="brochure-heading" style="background-image: url(<?php echo image_uri('chisels-in-row.jpg'); ?>);"><?php echo $brochureCategory->name; ?></h1>
 
   <div class="row">
-    <div class="col-md-3 left-nav">
-      <ul class="nav flex-column">
-      </ul>
-    </div>
+    <div class="col-md-3">
+      <div class="card bg-light mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Teach a Class</h5>
+          <p class="card-text">We are always looking for teachers! Classes are a great way to give back to the community.
+          Send an email to <a href="mailto:events@tcmaker.org">events@tcmaker.org</a>, and we’ll
+          get back to you to help get your class set up.</p>
+        </div>
+      </div>
+    </div> <!-- col -->
 
     <div class="col-md-9">
       <h2><?php echo $event->name->html; ?></h2>
