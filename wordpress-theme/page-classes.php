@@ -14,12 +14,25 @@
   <h1 class="brochure-heading" style="background-image: url(<?php echo image_uri('chisels-in-row.jpg'); ?>);"><?php echo $brochureCategory->name; ?></h1>
 
   <div class="row">
-    <div class="col-md-3 left-nav">
+    <!-- <div class="col-md-3 left-nav">
       <ul class="nav flex-column">
       </ul>
-    </div>
+    </div> -->
 
-    <div class="col-md-9">
+    <div class="col-md-12">
+      <h2>Upcoming Classes</h2>
+
+      <p>Our classes are open to members and non-members alike.</p>
+
+      <div class="card bg-light mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Teach a Class</h5>
+          <p class="card-text">We are always looking for teachers! Classes are a great way to give back to the community.
+          Send an email to <a href="mailto:events@tcmaker.org">events@tcmaker.org</a>, and we’ll
+          get back to you to help get your class set up.</p>
+        </div>
+      </div>
+
       <?php if ($events): ?>
         <?php $counter = 1; ?>
         <div class="row">
