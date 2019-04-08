@@ -8,3 +8,5 @@ wordpress-theme/assets
 /node_modules/*
 !/node_modules/.keep
 
+/dist/*
+
