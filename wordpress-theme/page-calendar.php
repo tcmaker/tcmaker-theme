@@ -30,24 +30,7 @@
   <h1 class="brochure-heading" style="background-image: url(<?php echo image_uri('chisels-in-row.jpg'); ?>);"><?php echo $brochureCategory->name; ?></h1>
 
   <div class="row">
-    <div class="col-md-3 left-nav">
-      <ul class="nav flex-column">
-        <?php foreach ($menuItems as $item): ?>
-          <?php if ($post->ID == $item->ID): ?>
-            <li class="nav-item">
-              <a class="nav-link active" href="<?php echo get_permalink($item); ?>"><?php echo apply_filters('the_title', $item->post_title); ?></a>
-            </li>
-          <?php else: ?>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo get_permalink($item); ?>"><?php echo apply_filters('the_title', $item->post_title); ?></a>
-            </li>
-          <?php endif; ?>
-        <?php endforeach; ?>
-      </ul>
-    </div>
-
-    <div class="col-md-9">
-      <h2>General Calendar</h2>
+    <div class="col-md-12">
       <?php if (true || class_exists('TCMaker\Calendar\MonthCalendar')): ?>
         <?php
           $params = new TCMaker\Calendar\ParameterExtractor($_GET);
@@ -57,11 +40,11 @@
 
         <div class="row mb-1">
           <div class="col-2 text-left align-bottom">
-            <a class="btn bg-light btn-sm" href="<?php echo $cal->getPreviousMonthCalendarUrl(); ?>">Prev</a>
+            <a class="btn btn-secondary btn-sm" href="<?php echo $cal->getPreviousMonthCalendarUrl(); ?>">Prev</a>
           </div>
 
           <div class="col-8 text-center align-bottom">
-            <h3><?php echo $cal->getMonthAndYearInEnglish() ?></h3>
+            <h2><?php echo $cal->getMonthAndYearInEnglish() ?></h2>
           </div>
 
           <div class="col-2 text-right align-bottom">
@@ -86,6 +69,8 @@
               <?php
                 if ($day->isFiller()) {
                   $cellClasses = "day col-sm p-2 border border-left-0 border-top-0 text-truncate d-none d-sm-inline-block bg-light text-muted";
+                } elseif ("{$day->getYear()}-{$day->getMonth()}-{$day->getDay()}" == date('Y-m-d')) {
+                  $cellClasses = "day col-sm p-2 border border-left-0 border-top-0 text-truncate d-none d-sm-inline-block bg-warning text-muted";
                 } else {
                   $cellClasses = "day col-sm p-2 border border-left-0 border-top-0 text-truncate";
                 }
