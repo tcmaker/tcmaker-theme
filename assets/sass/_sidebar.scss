@@ -1,0 +1,5 @@
+.sidebar {
+  input[type=submit] {
+    @include button-variant($primary, $primary, $primary);
+  }
+}

@@ -12,6 +12,20 @@ add_action('init', function() {
 
 register_nav_menu('top-nav', 'Top Nav');
 
+register_sidebar(array(
+  'name' => 'Primary Blog Sidebar',
+  'id' => 'blog-sidebar',
+  'description' => 'Standard Blog Sidebar',
+  'class' => 'blog-sidebar',
+  'before_widget' => '<div>',
+  'after_widget' => '</div>',
+  'before_title' => '<h5 class="widget-title">',
+  'after_title' => '</h5>',
+));
+
+
+
+
 function trigger_page_not_found() {
 
     // 1. Ensure `is_*` functions work

@@ -6,7 +6,13 @@
 <h1 class="brochure-heading" style="background-image: url(<?php echo image_uri('chisels-in-row.jpg'); ?>);">Blog</h1>
   <div class="row">
     <div class="col-md-3">
-      sidebar
+      <div id="sidebar-primary" class="sidebar">
+        <?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
+          <?php dynamic_sidebar( 'blog-sidebar' ); ?>
+        <?php else : ?>
+          <!-- Time to add some widgets! -->
+        <?php endif; ?>
+      </div>
     </div> <!-- col -->
     <div class="col-md-9">
       <?php if ( have_posts() ) : ?>

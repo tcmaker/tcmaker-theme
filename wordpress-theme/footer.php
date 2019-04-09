@@ -11,9 +11,7 @@
         <h6>Our Location</h6>
         <p>3119 E. 26th Street<br>
         Minneapolis, MN 55406</p>
-
-        <h6>Contact Information</h6>
-        <p>lol</p>
+        <p><a href="/contact">Contact Us</a></p>
       </div>
 
       <div class="col-md-3">
@@ -31,7 +29,6 @@
         <p><img src="<?php echo image_uri('logo-white-text.svg'); ?>"></p>
         <p>Copyright &copy; 2009&ndash;<?php echo date('Y'); ?> Twin Cities Maker.</p>
         <ul class="list-unstyled">
-          <li><a href="">Policies and Rules</a></li>
           <li><a href="">501(c)(3) Tax Information</a></li>
         </ul>
       </div>

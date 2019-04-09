@@ -89,25 +89,23 @@
           </li> -->
         </ul>
 
-        <!-- <% if current_member %>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= current_member.full_name %>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Edit Profile</a>
-                <a class="dropdown-item" href="#">Dashboard</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Sign Out</a>
-              </div>
-            </li>
-          </ul>
-        <% else %>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><%= link_to 'Member Dashboard', '/dashboard', class: 'nav-link' %></li>
-          </ul>
-        <% end %> -->
+        <!-- right dropdown -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Member Resources
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Laser Reservation Calendar</a>
+              <a class="dropdown-item" href="#">Wiki</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/wp-admin">WordPress Admin</a>
+              <?php if (is_user_logged_in()): ?>
+                <a class="dropdown-item" href="/wp-login.php?action=logout">Sign out of WordPress</a>
+              <?php endif; ?>
+            </div>
+          </li>
+        </ul> <!-- right dropdown -->
       </div>
     </nav>
   </div>

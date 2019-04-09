@@ -88,7 +88,7 @@
         <?php foreach ($calendarEvents->getEvents(4) as $event): ?>
           <a href="<?php echo $getCalendarUri($event); ?>" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1 text-dark"><?php echo $event->getSummary(); ?></h5>
+              <h5 class="display-5 mb-1 text-dark"><?php echo $event->getSummary(); ?></h5>
             </div>
             <small><strong><em><?php echo date('F j, Y \a\t g:i A', strtotime($event->getStart()->getDateTime())); ?></em></strong></small>
           </a>

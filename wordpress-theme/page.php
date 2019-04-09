@@ -36,19 +36,23 @@
 
   <div class="row">
     <div class="col-md-3 left-nav">
-      <ul class="nav flex-column">
-        <?php foreach ($menuItems as $item): ?>
-          <?php if ($post->ID == $item->ID): ?>
-            <li class="nav-item">
-              <a class="nav-link active" href="<?php echo get_permalink($item); ?>"><?php echo apply_filters('the_title', $item->post_title); ?></a>
-            </li>
-          <?php else: ?>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo get_permalink($item); ?>"><?php echo apply_filters('the_title', $item->post_title); ?></a>
-            </li>
-          <?php endif; ?>
-        <?php endforeach; ?>
-      </ul>
+      <div class="card bg-light">
+        <div class="card-body">
+          <ul class="nav flex-column">
+            <?php foreach ($menuItems as $item): ?>
+              <?php if ($post->ID == $item->ID): ?>
+                <li class="nav-item">
+                  <a class="nav-link active" href="<?php echo get_permalink($item); ?>"><?php echo apply_filters('the_title', $item->post_title); ?></a>
+                </li>
+              <?php else: ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="<?php echo get_permalink($item); ?>"><?php echo apply_filters('the_title', $item->post_title); ?></a>
+                </li>
+              <?php endif; ?>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="col-md-9">
