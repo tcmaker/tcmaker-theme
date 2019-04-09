@@ -70,7 +70,7 @@
                 if ($day->isFiller()) {
                   $cellClasses = "day col-sm p-2 border border-left-0 border-top-0 text-truncate d-none d-sm-inline-block bg-light text-muted";
                 } elseif ("{$day->getYear()}-{$day->getMonth()}-{$day->getDay()}" == date('Y-m-d')) {
-                  $cellClasses = "day col-sm p-2 border border-left-0 border-top-0 text-truncate d-none d-sm-inline-block bg-warning text-muted";
+                  $cellClasses = "day col-sm p-2 border border-left-0 border-top-0 text-truncate d-sm-inline-block bg-warning text-muted";
                 } else {
                   $cellClasses = "day col-sm p-2 border border-left-0 border-top-0 text-truncate";
                 }

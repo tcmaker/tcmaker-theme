@@ -25,7 +25,7 @@ class Eventbrite
         $events[] = $event;
       }
       $page++;
-    } while($json->pagination->has_more_items == true);
+    } while ($json->pagination->has_more_items == true);
 
     return $events;
   }

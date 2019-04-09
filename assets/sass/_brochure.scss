@@ -12,6 +12,13 @@
   h1 {
     color: $gray-200;
     font-size: 2.75em;
+    text-transform: uppercase;
+  }
+}
+
+.front-page-class-listing {
+  h5 {
+    text-transform: none;
   }
 }
 
@@ -25,6 +32,7 @@
   font-size: 2.75em;
   color: $gray-200;
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .left-nav {

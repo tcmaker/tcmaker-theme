@@ -18,6 +18,7 @@ require_once __DIR__ . '/google-api-php-client-2.2.2/vendor/autoload.php';
 require_once __DIR__ . '/lib/ParameterExtractor.php';
 require_once __DIR__ . '/lib/MonthCalendar.php';
 require_once __DIR__ . '/lib/Day.php';
+require_once __DIR__ . '/lib/UpcomingEvents.php';
 require_once __DIR__ . '/lib/Eventbrite.php';
 
 // Define Admin Screens
