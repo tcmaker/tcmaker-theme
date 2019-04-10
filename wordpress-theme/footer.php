@@ -22,6 +22,7 @@
           <li><a href="https://github.com/tcmaker">GitHub</a></li>
           <li><a href="https://groups.google.com/forum/#!forum/tcmaker">Google Groups</a></li>
           <li><a href="https://twitter.com/tcmaker">Twitter</a></li>
+          <li><a href="https://webchat.freenode.net/?channels=%23tcmaker&uio=d4">Freenode IRC</a></li>
         </ul>
       </div>
 
