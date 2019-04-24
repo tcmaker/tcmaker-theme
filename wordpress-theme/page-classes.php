@@ -43,7 +43,7 @@
                 } else {
                   $logoUrl = image_uri('eventbrite-placeholder.jpg');
                 } ?>
-                <img style="max-width: 100%;" src="<?php echo $logoUrl; ?>" class="card-img-top" alt="">
+                <img style="max-width: 100%;" src="<?php echo $logoUrl; ?>" class="card-img-top h-100" alt="">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $event->name->html; ?></h5>
                   <p class="card-text">

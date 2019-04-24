@@ -44,7 +44,7 @@
       <p><em><strong>Instructor:</strong> <a href="<?php echo $event->organizer->url; ?>"><?php echo $event->organizer->name; ?></a></em></p>
 
       <div class="card mb-3">
-        <div class="row no-gutters">
+        <div class="row no-gutters h-100">
           <div class="col-xl-8">
             <?php
               if ($event->logo) {

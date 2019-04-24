@@ -18,15 +18,17 @@ a.nav-link {
 }
 
 .navbar-brand {
-  img {
-    height: 2rem;
-    margin-right: 1em;
-  }
+  width: 11rem;
+  margin-right: 1rem;
 }
 
 .navbar {
   font-family: "League Spartan";
   font-size: 0.8rem;
+
+  .nav-link {
+
+  }
 
   .dropdown-item {
     font-size: 0.8rem;

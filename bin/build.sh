@@ -2,6 +2,10 @@
 
 gulp build
 
+if [ -d dist ]; then
+  rm dist/*.zip
+fi
+
 cp -R calendar tcmaker-calendar
 zip -r tcmaker-calendar.zip tcmaker-calendar
 mv tcmaker-calendar.zip dist/

@@ -29,7 +29,7 @@
     <div class="col-md-8 mb-4">
       <h2>A Makerspace for Makers of All Kinds</h2>
       <div class="card bg-light">
-        <div class="row no-gutters">
+        <div class="row no-gutters h-100"> <!-- h-100 fixes an IE 11 flex issue -->
           <div class="col-md-5">
             <img src="<?php echo image_uri('clamped-fingerboard.jpg'); ?>" class="card-img" alt="">
           </div>
