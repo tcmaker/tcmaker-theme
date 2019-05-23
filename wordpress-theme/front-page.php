@@ -41,7 +41,7 @@
                 All of our members have 24/7 access to our workshop.
               </p>
 
-              <a class="btn btn-primary" href="">Learn More About Our Shop</a>
+              <a class="btn btn-primary" href="/our-workshop">Learn More About Our Shop</a>
             </div>
           </div>
         </div>
