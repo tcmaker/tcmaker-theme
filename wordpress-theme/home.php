@@ -17,6 +17,7 @@
     <div class="col-md-9">
       <?php if ( have_posts() ) : ?>
         <?php while ( have_posts() ) : ?>
+          <article class="archive-listing">
           <?php the_post(); ?>
           <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
           <p class="byline">
@@ -30,6 +31,7 @@
               </p>
             </div>
           </div>
+          </article>
         <?php endwhile; ?>
       <?php endif; ?>
     </div> <!-- col -->

@@ -37,6 +37,25 @@ a.nav-link {
 
 //// Blog styles ////
 
+article.archive-listing {
+  h2 a {
+    color: $brand-red;
+  }
+}
+
+#sidebar-primary {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    li {
+      // font-family: $font-family-sans-serif;
+      font-weight: bold;
+      font-size: 0.8em;
+
+    }
+  }
+}
+
 .byline {
   font-family: $font-family-sans-serif;
   font-size: 0.9rem;

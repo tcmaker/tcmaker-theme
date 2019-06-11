@@ -19,7 +19,7 @@
   "devDependencies": {},
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
     "npm": "^6.8.0"
   }

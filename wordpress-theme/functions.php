@@ -129,7 +129,7 @@ function the_breadcrumbs() {
     }
 
     array_unshift($breadcrumbs, array(
-      'uri' => '/blog',
+      'uri' => '/news',
       'title' => 'Blog',
     ));
 
