@@ -29,6 +29,14 @@
 
   <h1 class="brochure-heading" style="background-image: url(<?php echo image_uri('chisels-in-row.jpg'); ?>);"><?php echo $brochureCategory->name; ?></h1>
 
+  <div class="row"
+    <div class="col-md-12">
+      <div class="alert alert-info" role="alert">
+        <strong>Looking for the laser calendar?</strong> See <a href="/laser-resources">Member Resources</a>.
+      </div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-md-12">
       <?php if (true || class_exists('TCMaker\Calendar\MonthCalendar')): ?>
