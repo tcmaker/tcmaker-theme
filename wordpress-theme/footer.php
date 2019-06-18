@@ -30,7 +30,7 @@
         <p><img src="<?php echo image_uri('logo-white-text.svg'); ?>"></p>
         <p>Copyright &copy; 2009&ndash;<?php echo date('Y'); ?> Twin Cities Maker.</p>
         <ul class="list-unstyled">
-          <li><a href="">501(c)(3) Tax Information</a></li>
+          <li><a href="https://apps.irs.gov/app/eos/displayAll.do?dispatchMethod=displayAllInfo&Id=666012&ein=271536940&country=US&deductibility=all&dispatchMethod=searchAll&isDescending=false&city=&ein1=27-1536940&postDateFrom=&exemptTypeCode=al&submitName=Search&sortColumn=orgName&totalResults=1&names=&resultsPerPage=25&indexOfFirstRow=0&postDateTo=&state=All+States">501(c)(3) Tax Information</a></li>
         </ul>
       </div>
     </div>
