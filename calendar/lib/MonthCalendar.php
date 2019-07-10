@@ -109,8 +109,8 @@ class MonthCalendar
       }
       $key = $key->format('Y-m-d');
 
-      // TODO: Fix this awful hack. We need a better way to hide events from the calendar.
-      if ($event->getSummary() != 'Trash Pickup') {
+      // TODO: Fix this awful hack. We need a better way to hide events from the website calendar.
+      if ($event->getSummary() != 'Trash Pickup' && $event->getSummary() != 'Recycle Pickup') {
         $days[$key]->addEvent($event);
       }
     }
