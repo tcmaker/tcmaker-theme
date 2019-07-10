@@ -29,7 +29,7 @@
 
   <h1 class="brochure-heading" style="background-image: url(<?php echo image_uri('chisels-in-row.jpg'); ?>);"><?php echo $brochureCategory->name; ?></h1>
 
-  <div class="row"
+  <div class="row">
     <div class="col-md-12">
       <div class="alert alert-info" role="alert">
         <strong>Looking for the laser calendar?</strong> See <a href="/laser-resources">Member Resources</a>.
@@ -122,9 +122,15 @@
                   <div class="container-fluid">
                     <div class="row">
                       <div class="col-sm-6">
-                        <h6><?php echo (new DateTime($event->getStart()->getDateTime()))->format("F j, Y"); ?></h6>
-                        <p><strong>Starts:</strong> <?php echo (new DateTime($event->getStart()->getDateTime()))->format("g:i A"); ?><br />
-                        <strong>Ends:</strong> <?php echo (new DateTime($event->getEnd()->getDateTime()))->format("g:i A"); ?></p>
+                        <?php if ($event->getStart()->getDateTime()): ?>
+                          <h6><?php echo (new DateTime($event->getStart()->getDateTime()))->format("F j, Y"); ?></h6>
+                          <p><strong>Starts:</strong> <?php echo (new DateTime($event->getStart()->getDateTime()))->format("g:i A"); ?><br />
+                            <strong>Ends:</strong> <?php echo (new DateTime($event->getEnd()->getDateTime()))->format("g:i A"); ?>
+                          </p>
+                        <?php else: ?>
+                          <h6><?php echo (new DateTime($event->getStart()->getDate()))->format("F j, Y"); ?></h6>
+                          <p>This is an all-day event.</p>
+                        <?php endif; ?>
                       </div>
                       <div class="col-sm-6">
                         <a href="<?php echo $event->getHtmlLink(); ?>" class="btn btn-primary btn-sm text-white">View on Google Calendar</a>

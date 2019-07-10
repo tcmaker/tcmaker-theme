@@ -34,7 +34,6 @@ class MonthCalendar
 
     // These Unix timestamps aren't useful to us anymore. Convert to DateTime
     // objects.
-
     $this->beginningOfCalendar = getdate($beginningOfCalendar);
     $this->beginningOfCalendar = new \DateTime("{$this->beginningOfCalendar['year']}-{$this->beginningOfCalendar['mon']}-{$this->beginningOfCalendar['mday']} 00:00:00");
 
@@ -50,7 +49,6 @@ class MonthCalendar
     $client->setDeveloperKey($developerKey);
     $service = new \Google_Service_Calendar($client);
 
-    // $laserCalendarId = 'tcmaker.org_2d3935333934333630383333@resource.calendar.google.com';
     $calendarId = get_option('main_google_calendar_id');
     $optParams = array(
       'orderBy' => 'startTime',
@@ -104,11 +102,15 @@ class MonthCalendar
     }
 
     foreach ($this->events as $event) {
-      $key = new \DateTime($event->getStart()->getDateTime());
+      if ($event->getStart()->getDateTime()) {
+        $key = new \DateTime($event->getStart()->getDateTime());
+      } else {
+        $key = new \DateTime($event->getStart()->getDate());
+      }
       $key = $key->format('Y-m-d');
 
-      // TODO: Handle all-day events instead of just ignoring them.
-      if (array_key_exists($key, $days)) {
+      // TODO: Fix this awful hack. We need a better way to hide events from the calendar.
+      if ($event->getSummary() != 'Trash Pickup') {
         $days[$key]->addEvent($event);
       }
     }

@@ -57,7 +57,7 @@ class Day
 
   public function getDayOfWeek()
   {
-    return date('l', mktime(0, 0, 0, $this->day, $this->month, $this->year));
+    return date('l', mktime(0, 0, 0, $this->month, $this->day, $this->year));
   }
 
   public function getEvents()
