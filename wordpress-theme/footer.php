@@ -33,7 +33,7 @@
         <ul class="list-unstyled">
           <li><a href="https://apps.irs.gov/app/eos/displayAll.do?dispatchMethod=displayAllInfo&Id=666012&ein=271536940&country=US&deductibility=all&dispatchMethod=searchAll&isDescending=false&city=&ein1=27-1536940&postDateFrom=&exemptTypeCode=al&submitName=Search&sortColumn=orgName&totalResults=1&names=&resultsPerPage=25&indexOfFirstRow=0&postDateTo=&state=All+States">501(c)(3) IRS Tax Status Information</a></li>
           <li><a href="https://mblsportal.sos.state.mn.us/Business/SearchDetails?filingGuid=7e9eccc8-94d4-e011-a886-001ec94ffe7f"> MN Secretary of State Filings</a> </li>
-          <li><a href="https://www.ag.state.mn.us/Charity/Search/CHR_GeneralInfo.asp?FederalID=271536940&Yr=CURR&cmdSearch=View"> MN Attorney General Charity</a> </li>
+          <li><a href="https://www.ag.state.mn.us/Charity/Search/CHR_GeneralInfo.asp?FederalID=271536940&Yr=CURR&cmdSearch=View"> MN Attorney General Charity Search</a> </li>
           <li><a href="https://www.guidestar.org/profile/27-1536940">GuideStar Page</a></li>
         </ul>
       </div>
