@@ -1,6 +1,7 @@
 .vagrant
 
 *-cloudimg-console.log
+*.code-workspace
 
 wordpress-theme/assets
 !/wordpress-theme/assets/.keep
@@ -9,4 +10,5 @@ wordpress-theme/assets
 !/node_modules/.keep
 
 /dist/*
+
 
