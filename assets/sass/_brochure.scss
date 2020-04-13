@@ -45,3 +45,17 @@
     color: #000;
   }
 }
+
+.card-header {
+  font-family: "League Spartan";
+}
+
+.text-white {
+  h1,h2,h3,h4,h5,h6 {
+    color: #fff;
+  }
+}
+
+.text-sans-serif {
+  font-family: $font-family-sans-serif;
+}

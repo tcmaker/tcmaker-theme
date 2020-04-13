@@ -63,6 +63,35 @@
     </div>
   </div> <!-- row -->
 
+  <!-- BEGIN COVID-19 MESSAGE -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card bg-primary text-white">
+        <!-- <div class="card-header">
+        </div> -->
+        <div class="row no-gutters h-100"> <!-- h-100 fixes an IE 11 flex issue -->
+          <div class="col-lg-3 d-none d-lg-block">
+            <img src="<?php echo image_uri('3d-printer-square.jpg'); ?>" class="card-img" alt="">
+          </div>
+
+          <div class="col-lg-9">
+            <div class="card-body text-sans-serif">
+              <h5 class="card-title">Help Fight COVID-19</h5>
+              <p class="card-text">
+                Twin Cities Maker is doing our part to supply the medical professionals in our
+                community with the personal protective equipment they need to stay safe. We have been
+                hard at work getting as many 3D printers online as possible, and we need your help!
+              </p>
+
+              <a class="btn btn-light" href="/covid-19-ppe/">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END COVID-19 MESSAGE -->
+
   <div class="row">
     <div class="col-md-8">
       <h2>News and Announcements</h2>
@@ -98,34 +127,3 @@
   </div> <!-- row -->
 </div> <!-- container -->
 <?php get_footer(); ?>
-
-  <?php /* <div class="row">
-    <div class="col-lg-12">
-      <h2>From the Blog</h2>
-    </div>
-  </div>
-    <div class="row">
-      <?php query_posts('posts_per_page=2'); ?>
-      <?php while ( have_posts() ) : the_post(); ?>
-        <!-- begin blog post -->
-        <div class="col-lg-6">
-          <div class="card flex-md-row blog-preview">
-            <div class="card-body d-flex align-items-start">
-              <div class="card-text">
-                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                <p class="byline">
-                  by <?php the_author(); ?>, <?php the_time('F j, Y'); ?>
-                </p>
-                <?php the_excerpt(); ?>
-
-                  <a class="btn btn-primary" href="<?php the_permalink(); ?>">Continue reading</a>
-              </div>
-            </div>
-            <!-- the_post_thumbnail() -->
-          </div>
-        </div>
-        <!-- end -->
-      <?php endwhile; ?>
-    </div>
-  </div>
-</div> */ ?>
