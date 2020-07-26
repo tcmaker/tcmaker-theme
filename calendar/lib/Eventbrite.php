@@ -12,10 +12,13 @@ class Eventbrite
 
   public function getUpcomingClasses()
   {
+    $organization_id = json_decode($this->get('/users/me/organizations/')['body']);
+    $organization_id = reset($organization_id->organizations)->id;
+
     $events = array();
     $page = 1;
     do {
-      $resp = $this->get("/users/me/events?status=live,started&page=$page");
+      $resp = $this->get("/organizations/$organization_id/events/?status=live,started&page=$page");
       $json = json_decode($resp['body']);
       foreach ($json->events as $event) {
         // Strip out open houses.
