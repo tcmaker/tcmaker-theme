@@ -97,7 +97,6 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="https://clubhouse.tcmaker.org/">Member Dashboard</a>
-              <a class="dropdown-item" href="/laser-reservations">Laser Reservation Calendar</a>
               <a class="dropdown-item" href="https://wiki.tcmaker.org/">Wiki</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/wp-admin">WordPress Admin</a>
