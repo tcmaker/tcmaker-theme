@@ -71,34 +71,19 @@
         </div> -->
         <div class="row no-gutters h-100"> <!-- h-100 fixes an IE 11 flex issue -->
           <div class="col-lg-3 d-none d-lg-block">
-            <img src="<?php echo image_uri('random-shop-section.jpg'); ?>" class="card-img" alt="">
+            <img src="<?php echo image_uri('covid-mask.png'); ?>" class="card-img" alt="">
           </div>
 
           <div class="col-lg-9">
             <div class="card-body text-sans-serif">
-              <h5 class="card-title">Temporary Partial Shop Closures</h5>
+              <h5 class="card-title">Covid Safety Guidelines</h5>
               <p class="card-text">
-                The board of TC Maker held an emergency meeting to create a response plan related to the 
-                recent executive order and the rise in COVID-19 cases in Minnesota. Though we are not 
-                required by the order to close the facility, we have a duty to close areas of the shop 
-                that currently lack proper air quality management systems until such systems can be 
-                installed. This is a temporary closure and we are doing everything we can to get these 
-                spaces open as soon as possible. The smaller shops should be open within a few days once 
-                we purchase the appropriate air filter units.
-
-                Effective immediately the following departments are closed for members to use:
-                - Metal Shop
-                - CNC
-                - Laser
-                - 3D Lab
-                - Electronics Lab
-                - Artifactory 
-                - Grinding room
-
-                Shop departments not listed are still open.
+                To keep everyone in the community safe and help stop the spread of covid we have
+                enacted a number of safety guidelines including mandatory masking, physical distancing,
+                and mandatory shop time scheduling via Clubhouse, our member service site.
               </p>
 
-              <a class="btn btn-light" href="/covid-preparedness/">Learn More</a>
+              <a class="btn btn-light" href="/covid-safety/">Learn More about staying safe while making</a>
             </div>
           </div>
         </div>
