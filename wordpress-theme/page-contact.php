@@ -58,7 +58,7 @@
           <li class="list-group-item"><a href="https://github.com/tcmaker">GitHub</a></li>
           <li class="list-group-item"><a href="https://groups.google.com/forum/#!forum/tcmaker">Google Groups</a></li>
           <li class="list-group-item"><a href="https://twitter.com/tcmaker">Twitter</a></li>
-          <li class="list-group-item"><a href="https://webchat.freenode.net/?channels=%23tcmaker&uio=d4">Freenode IRC</a></li>
+          <li class="list-group-item"><a href="https://web.libera.chat/#tcmaker">Libra.chat IRC</a></li>
           <li class="list-group-item"><a href="https://tcmaker.slack.com/">Slack</a></li>
         </ul>
       </div>
